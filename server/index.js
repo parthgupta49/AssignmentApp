@@ -19,7 +19,7 @@ const fileUpload = require("express-fileupload");
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin : "http://localhost:3000",
+    origin : "https://badakar-assignment-app.vercel.app",
     // origin : "https://task-manager-assignment-application.vercel.app",
     credentials : true
 }));
