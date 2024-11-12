@@ -27,7 +27,7 @@ exports.resetPasswordToken = async (req, res) => {
             },
             { returnDocument: "after" }
         )
-        const url = `https://badakarassignmentapp.onrender.com/update-password/${token}`
+        const url = `https://badakar-assignment-app.vercel.app/update-password/${token}`
         await mailSender(email, "Password Reset Link",
             `<p>Hi ${user?.firstname+" "+user?.lastname},</p>
             <p>You have requested a password reset.</p>
