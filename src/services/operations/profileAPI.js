@@ -55,7 +55,7 @@ export function deleteAccount(navigate) {
         console.log(navigate);
         try {
             const response = await apiConnector("DELETE", DELETE_PROFILE_API, null, null, null, true);
-            console.log(response.data);
+            // console.log(response.data);
             if (!response.data.success) {
                 throw new Error(response.data.message);
             }
@@ -65,7 +65,7 @@ export function deleteAccount(navigate) {
             localStorage.removeItem("user");
             document.cookie = `token=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;`
             toast.success("Account Deleted Successfully")
-            console.log("ACCOUNT DELETED");
+            // console.log("ACCOUNT DELETED");
             navigate("/");
         } catch (error) {
             console.log("DELETE ACCOUNT API ERROR : ", error);
@@ -77,9 +77,9 @@ export function deleteAccount(navigate) {
 }
 export function editMyProfile(dateOfBirth, about, gender) {
     return async (dispatch) => {
-        console.table([dateOfBirth, about, gender]);
+        // console.table([dateOfBirth, about, gender]);
         const toastId = toast.loading("Loading...");
-        dispatch(setLoading(true));
+        // dispatch(setLoading(true));
         try {
             const response = await apiConnector("PUT", UPDATE_PROFILE_API, { dateOfBirth, about, gender }, null, null, true)
             console.log(response?.data);
@@ -94,7 +94,7 @@ export function editMyProfile(dateOfBirth, about, gender) {
             console.log("ERROR UPDATING PROFILE API", error);
             toast.error(error.response.data.message);
         }
-        dispatch(setLoading(false));
+        // dispatch(setLoading(false));
         toast.dismiss(toastId);
     }
 }
