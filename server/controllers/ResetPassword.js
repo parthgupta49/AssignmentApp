@@ -27,7 +27,7 @@ exports.resetPasswordToken = async (req, res) => {
             },
             { returnDocument: "after" }
         )
-        const url = `http://localhost:3000/update-password/${token}`
+        const url = `https://badakarassignmentapp.onrender.com/update-password/${token}`
         await mailSender(email, "Password Reset Link",
             `<p>Hi ${user?.firstname+" "+user?.lastname},</p>
             <p>You have requested a password reset.</p>
