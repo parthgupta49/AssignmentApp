@@ -51,7 +51,7 @@ export function updateProfilePicture(displayPicture) {
 export function deleteAccount(navigate) {
     return async (dispatch) => {
         const toastId = toast.loading("Loading...");
-        dispatch(setLoading(true));
+        // dispatch(setLoading(true));
         console.log(navigate);
         try {
             const response = await apiConnector("DELETE", DELETE_PROFILE_API, null, null, null, true);
@@ -71,7 +71,7 @@ export function deleteAccount(navigate) {
             console.log("DELETE ACCOUNT API ERROR : ", error);
             toast.error(error.response.data.message);
         }
-        dispatch(setLoading(false));
+        // dispatch(setLoading(false));
         toast.dismiss(toastId);
     }
 }
