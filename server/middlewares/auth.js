@@ -6,7 +6,7 @@ exports.auth = async(req,res,next) => {
     try {
         // console.log("REQUEST OBJECT : ",req);
         // console.log("REQUEST COOKIES : ,",req.cookies);
-        console.log(req);
+        // console.log(req);
         const token = req.cookies[TOKEN_NAME] || req.cookies?.token;
         if(!token) return res.status(401).json({success : false, message : 'No token is provided'});
         const payload = jwt.verify(token, process.env.JWT_SECRET);

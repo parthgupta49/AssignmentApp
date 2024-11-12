@@ -47,9 +47,8 @@ const DeleteAccount = () => {
         </div>
         {/* Delete Content */}
         <div className='w-[80%]'>
-          <h2 className='text-white font-medium'>Delete Content</h2>
+          <h2 className='text-white font-medium'>Delete Account</h2>
           <p>Would you like to delete account?</p>
-          <p>This account contains Paid Courses. Deleting your account will remove all the contain associated with it.</p>
           <p className='text-[#D43D63] italic cursor-pointer' onClick={handleDeleteModal}>I want to delete my account.</p>
         </div>
       </div>
