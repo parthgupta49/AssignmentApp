@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:4001/api/v1"
+const BASE_URL = "https://badakarassignmentapp.onrender.com/api/v1"
 console.log("base url " ,BASE_URL);
 
 // AUTH ENDPOINTS
