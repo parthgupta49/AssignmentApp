@@ -1,11 +1,14 @@
 import React from 'react'
 import HeadPoints from '../common/HeadPoints'
 import ImageGallary from '../common/ImageGallary'
+import { LampContainer } from '../ui/lamp'
+import { motion } from 'framer-motion'
+
 
 const Section4 = () => {
     return (
         <div className='lg:flex lg:flex-row w-11/12 max-w-[1320px] mx-auto lg:gap-9 py-[4%]'>
-            <HeadPoints
+            {/* <HeadPoints
             subHeading={"OUR EXPERTISE"}
             mainHeading={"PASSION INTO INTERIOR SERVICES."}
             customCSSMainHeading={"lg:max-w-[70%] text-white"}
@@ -25,18 +28,43 @@ const Section4 = () => {
                     </div>
                 </div>
 
-            </HeadPoints>
+            </HeadPoints> */}
 
-            <div className='lg:w-[70%]  flex flex-row flex-wrap lg:gap-20 lg:gap-y-6'>
-                <ImageGallary imageSource={"https://www.badakar.com/assets/img/f8a2c9d5-2a51-4dc7-a954-245a3839ec46Design%20and%20build,%20a%20superior%20method%20for%20corporate%20fitouts.jpg?h=9119516b4398422daebb1cac6c5ad1e4"}/>
-                <ImageGallary imageSource={"https://www.badakar.com/assets/img/mep-service-mechanicaleng.jpg?h=1b3deea851cba2807370e14da898087a"}/>
-                <ImageGallary imageSource={"https://www.badakar.com/assets/img/Home-automation.jpeg?h=f014769c2f861274e96d8e26b6ffa639"}/>
-                <ImageGallary imageSource={"https://www.badakar.com/assets/img/PTZ%20camera.jpg?h=105ec69c618b9831626a20c3a7610b1a"}/>
-                <ImageGallary imageSource={"https://www.badakar.com/assets/img/commercial%20ceiling.jpg?h=7ffedbafa5fea2d86d0ffbc786956947"}/>
-                <ImageGallary imageSource={"https://www.badakar.com/assets/img/FFS.jpg?h=cdc7a25ff140774a41c33933eee481c8"}/>
+            <LampContainer>
+                <motion.h1
+                    initial={{ opacity: 0.5, y: 100 }}
+                    whileInView={{ opacity: 1, y: -50 }}
+                    transition={{
+                        delay: 0.3,
+                        duration: 0.8,
+                        ease: "easeInOut",
+                    }}
+                    className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+                >
+                    The Elegance meets efficiency <br /> in Professional projects.
+                </motion.h1>
 
+                {/* <motion.div
 
-            </div>
+                    initial={{
+                        opacity: 0
+                    }}
+                    whileInView={{
+                        opacity: 1
+                    }}
+                    transition={{
+                        delay: 0.5,
+                        duration: 0.8,
+                        ease: "easeInOut"
+                    }}
+                    className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center  font-medium tracking-tight text-transparent "
+
+                >
+                    <p>- Fresh Commercial & Residential Interiors.</p>
+                    <p>- Renovation / Restructure / Remodelling.</p>
+
+                </motion.div> */}
+            </LampContainer>
         </div>
     )
 }

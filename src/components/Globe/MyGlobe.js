@@ -412,7 +412,9 @@ function GlobeDemo() {
                     <h2
                         className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
                         We work all across the World
+                        <br/>& Deliver The Best
                     </h2>
+                    <p className="font-bold dark:text-yellow-25 text-center text-lg  ">This Globe is <span className="text-pink-200">all yours <span className=" text-red-200 underline">now</span></span></p>
                     
                 </motion.div>
                 <div

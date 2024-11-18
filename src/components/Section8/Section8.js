@@ -1,5 +1,6 @@
 import React from 'react'
 import { VscDash } from "react-icons/vsc";
+import { InfiniteMovingCards } from '../ui/infinite-moving-cards';
 // import { FloatingDock } from "@/components/ui/floating-dock";
 const imageSourceLink = [
     "https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381",
@@ -100,31 +101,42 @@ const imageSourceLink = [
 
 const Section8 = () => {
     return (
-        <div className='lg:flex lg:flex-row w-11/12 max-w-[1320px] mx-auto lg:gap-10 pl-10 py-10'>
+        <div className='w-full bg-black'>
+            <div className='lg:flex lg:flex-col w-11/12 max-w-[1320px] mx-auto lg:gap-10 pl-10 py-10'>
 
-            <h2 className='text-2xl font-bold max-w-[20%] pt-5'>OUR PRESTIGIOUS CLIENTS</h2>
+                <h2 className='text-4xl font-bold pt-5 text-center text-white'>OUR PRESTIGIOUS CLIENTS</h2>
 
-            <div className='lg:w-[70%] flex flex-col items-end'>
-                <div className='grid lg:grid-cols-4 lg:w-full place-items-end   '>
-                    {
-                        imageSourceLink.map((imageSource, index) => {
-                            return (
-                                <div key={imageSource} className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
-                                    <img src={imageSource} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
-                                </div>
+                <div className='lg:w-full flex flex-col items-end'>
+                    <div className='lg:w-full   '>
+                        {/* {
+            imageSourceLink.map((imageSource, index) => {
+                return (
+                    <div key={imageSource} className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
+                        <img src={imageSource} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
+                    </div>
 
-                            )
-                        })
-                    }
+                )
+            }
+            )
+        } */}
+
+                        {
+                            <InfiniteMovingCards
+                                items={imageSourceLink}
+                                direction="right"
+                                speed="slow"
+                            />
+                        }
+
+                    </div>
+                    {/* 
+    <div className='text-btn-color bg-btn-bg  text-sm hover:text-btn-hover-color hover:bg-btn-hover-bg px-3 py-2 flex items-center tracking-widest rounded-lg transition-colors duration-300'>
+        <VscDash /> &nbsp; OUR CLIENTAL</div> */}
+
 
                 </div>
 
-                <div className='text-btn-color bg-btn-bg  text-sm hover:text-btn-hover-color hover:bg-btn-hover-bg px-3 py-2 flex items-center tracking-widest rounded-lg transition-colors duration-300'>
-                    <VscDash /> &nbsp; OUR CLIENTAL</div>
-
-
             </div>
-
         </div>
     )
 }

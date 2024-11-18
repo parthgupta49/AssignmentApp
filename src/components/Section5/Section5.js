@@ -2,19 +2,23 @@ import React from 'react'
 import HeadPoints from '../common/HeadPoints'
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { Link } from 'react-router-dom';
+
+import HighlightText from '../common/HighlightText';
+import CodeBlocks from '../common/CodeBlocks';
+
 // import ImageGallary from '../common/ImageGallary'
 
 
 const Section5 = () => {
     return (
-        <div className='lg:flex lg:flex-row w-11/12 max-w-[1320px] mx-auto lg:gap-0 lg:justify-center py-[5%] items-start'>
+        <div className='lg:flex lg:flex-row w-11/12 max-w-[1320px] mx-auto lg:gap-40 lg:justify-center py-[5%] items-start'>
             {/* image */}
-            <div className='lg:min-w-[35%]'>
+            <div className='lg:max-w-[40%]'>
                 {ThreeDCardDemo()}
             </div>
 
             {/* HeadPoints */}
-            <HeadPoints
+            {/* <HeadPoints
                 subHeading={"WHY US"}
                 boxCustomCSS = {"bg-white"}
                 mainHeading={"We focus on utilizing the static limitations to the fullest. Our team has expertise in all types of architectural designs and decoration be it a multi-location offices, farmhouse, residence, restaurants, industrial & commercial complex."}
@@ -27,7 +31,38 @@ const Section5 = () => {
                     <p><span className='font-bold'>• </span>Proactive-Project Management.</p>
                     <p><span className='font-bold'>• </span>Professional & Product expertise.</p>
                 </div>
-            </HeadPoints>
+            </HeadPoints> */}
+
+            <div className='lg:w-[50%]'><CodeBlocks
+                            position={"lg:flex-row-reverse"}
+                            heading={
+                                <div className='text-4xl font-semibold'>Start <HighlightText text={"coding in seconds "} />
+                                </div>
+                            }
+                            subHeading={"Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."}
+                            ctabtn1={{
+                                text: "Continue Lesson",
+                                linkTo: "/signup",
+                                active: true
+                            }}
+                            ctabtn2={{
+                                text: "Learn More",
+                                linkTo: "/login",
+                                active: false
+                            }}
+
+                            codeblock={`\t\t\t\t\tWHY US?\nWe focus on utilizing the static limitations to the fullest.\n\tOur team has expertise in all types of architectural designs and decoration be it a multi-location offices, farmhouse, residence, restaurants, industrial & commercial complex.\n\n• Modern designs and furnishing\n• End-to-End from concept, creation, planning to execution.\n• Proactive-Project Management.\n• Professional & Product expertise.`}
+                            codeColor={"text-yellow-25 font-bold"}
+
+                            backgroundGradient={<div className='absolute w-[50%] h-[40%] left-[3rem] top-3' style={{
+                                backgroundImage: 'radial-gradient(farthest-corner at 50% 50%, #1fa2ff -3.62%, #12d8fa 50.44%, #a6ffcb 104.51%)',
+                                filter: 'blur(100px)'
+                            }}></div>}
+
+                        >
+
+                        </CodeBlocks></div>
+            
         </div>
     )
 }
@@ -40,7 +75,7 @@ export function ThreeDCardDemo() {
     return (
         (<CardContainer className="inter-var">
             <CardBody
-                className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-richblue-700 dark:border-white/[0.2] border-black/[0.1]  h-auto rounded-xl p-6 border  ">
+                className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-richblack-800 dark:border-white/[0.2] border-black/[0.1]  h-auto rounded-xl p-6 border  ">
                 <CardItem
                     translateZ="50"
                     className="text-xl font-bold text-neutral-600 dark:text-white text-center mx-auto">

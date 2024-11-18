@@ -94,7 +94,7 @@ const Navbar = () => {
                     </div>
 
                     {/* buttons */}
-                    <div>
+                    <div className=''>
                         {
                             user ? <div className='flex gap-4 items-center'><Profile /><button className={`rounded-lg border p-2 px-3 text-richblack-50 "} `}
                                 onClick={logoutBTNHandler}
