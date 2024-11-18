@@ -8,20 +8,20 @@ const Section4 = () => {
             <HeadPoints
             subHeading={"OUR EXPERTISE"}
             mainHeading={"PASSION INTO INTERIOR SERVICES."}
-            customCSSMainHeading={"lg:max-w-[70%]"}
+            customCSSMainHeading={"lg:max-w-[70%] text-white"}
             customCSSBOX={"lg:gap-4"}
             >
-                <div className='lg:flex lg:flex-col lg:gap-7'>
+                <div className='lg:flex lg:flex-col lg:gap-7 text-white'>
                     <p>The Elegance meets efficiency in Professional projects.</p>
                     <div>
-                        <p>• Fresh Commercial & Residential Interiors.</p>
-                        <p>• Renovation / Restructure / Remodelling.</p>
-                        <p>• Electronics / Electricals.</p>
-                        <p>• Interior Fitouts.</p>
-                        <p>• Complete MEP Services.</p>
-                        <p>• Home Automation.</p>
-                        <p>• Security Surveillance.</p>
-                        <p>• Fire Protection.</p>
+                        <p>- Fresh Commercial & Residential Interiors.</p>
+                        <p>- Renovation / Restructure / Remodelling.</p>
+                        <p>- Electronics / Electricals.</p>
+                        <p>- Interior Fitouts.</p>
+                        <p>- Complete MEP Services.</p>
+                        <p>- Home Automation.</p>
+                        <p>- Security Surveillance.</p>
+                        <p>- Fire Protection.</p>
                     </div>
                 </div>
 

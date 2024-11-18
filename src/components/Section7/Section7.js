@@ -1,50 +1,63 @@
-import React, { useEffect, useState } from 'react'
-import HeadPoints from '../common/HeadPoints'
-import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
-
-const imageSourceLink = [
-    "https://www.badakar.com/assets/img/carosel3.jpg?h=1708fc7bd9f3565ed489289f97a6b099",
-    "https://www.badakar.com/assets/img/2-5.jpg?h=f9df3be2c5f7e11308e1b8432fb801a6",
-    "https://www.badakar.com/assets/img/carosel2.jpg?h=a9e2c06810422a0996f15b98b8bc895f"
-]
+import React, { useEffect, useState, lazy, Suspense } from 'react'
+const MacbookScroll = lazy(() => import('../ui/macbook-scroll').then((module) => ({ default: module.MacbookScroll })))
 const Section7 = () => {
-    const [imageSource, setImageSource] = useState(imageSourceLink[0]);
-
-    const handleLeftClick = () => {
-        const currentIndex = imageSourceLink.indexOf(imageSource);
-        if (currentIndex === 0) {
-            setImageSource(imageSourceLink[imageSourceLink.length - 1]);
-            return
-        }
-        setImageSource(imageSourceLink[currentIndex - 1]);
-        return;
-    }
-    const handleRightClick = () => {
-        const currentIndex = imageSourceLink.indexOf(imageSource);
-        if (currentIndex === imageSourceLink.length - 1) {
-            setImageSource(imageSourceLink[0]);
-        }
-        else{
-            setImageSource(imageSourceLink[currentIndex + 1]);
-        }
-        return;
-    }
-    const getCurrentIndexImageSource = (index) => {
-        return index === imageSourceLink.indexOf(imageSource);
-    }
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            handleRightClick();
-        }, 4000);
-        return () => clearInterval(intervalId);
-// eslint-disable-next-line
-    }, [imageSource])
+    // Peerlist logo
+    const Badge = ({
+        className
+    }) => {
+        return (
+            (<svg
+                width="24"
+                height="24"
+                viewBox="0 0 56 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={className}>
+                <path
+                    d="M56 28C56 43.464 43.464 56 28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28Z"
+                    fill="#00AA45"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M28 54C42.3594 54 54 42.3594 54 28C54 13.6406 42.3594 2 28 2C13.6406 2 2 13.6406 2 28C2 42.3594 13.6406 54 28 54ZM28 56C43.464 56 56 43.464 56 28C56 12.536 43.464 0 28 0C12.536 0 0 12.536 0 28C0 43.464 12.536 56 28 56Z"
+                    fill="#219653"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M27.0769 12H15V46H24.3846V38.8889H27.0769C34.7305 38.8889 41 32.9048 41 25.4444C41 17.984 34.7305 12 27.0769 12ZM24.3846 29.7778V21.1111H27.0769C29.6194 21.1111 31.6154 23.0864 31.6154 25.4444C31.6154 27.8024 29.6194 29.7778 27.0769 29.7778H24.3846Z"
+                    fill="#24292E"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M18 11H29.0769C36.2141 11 42 16.5716 42 23.4444C42 30.3173 36.2141 35.8889 29.0769 35.8889H25.3846V43H18V11ZM25.3846 28.7778H29.0769C32.1357 28.7778 34.6154 26.39 34.6154 23.4444C34.6154 20.4989 32.1357 18.1111 29.0769 18.1111H25.3846V28.7778Z"
+                    fill="white"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17 10H29.0769C36.7305 10 43 15.984 43 23.4444C43 30.9048 36.7305 36.8889 29.0769 36.8889H26.3846V44H17V10ZM19 12V42H24.3846V34.8889H29.0769C35.6978 34.8889 41 29.7298 41 23.4444C41 17.1591 35.6978 12 29.0769 12H19ZM24.3846 17.1111H29.0769C32.6521 17.1111 35.6154 19.9114 35.6154 23.4444C35.6154 26.9775 32.6521 29.7778 29.0769 29.7778H24.3846V17.1111ZM26.3846 19.1111V27.7778H29.0769C31.6194 27.7778 33.6154 25.8024 33.6154 23.4444C33.6154 21.0864 31.6194 19.1111 29.0769 19.1111H26.3846Z"
+                    fill="#24292E"></path>
+            </svg>)
+        );
+    };
     return (
-        <div className='lg:flex lg:flex-row w-11/12 max-w-[1320px] mx-auto lg:gap-0 px-10 py-10 bg-gray-200'>
-            <div className='lg:min-w-[60%] lg:pl-10 relative'>
-                <img alt='badakar' src={imageSource} className='lg:w-[90%] lg:h-[95%] bg-cover object-center transition-all duration-200' />
-                <RiArrowLeftSLine onClick={handleLeftClick} className='   cursor-pointer absolute top-[50%] left-[7%] -translate-y-[50%] text-gray-200 opacity-60 transition-opacity duration-150 hover:opacity-100' size={"2.5rem"} />
+        <div className='w-full bg-black'>
+            <div className='lg:flex lg:flex-row w-11/12 max-w-[1320px] mx-auto lg:gap-0 px-10 py-10 '>
+                <div className='w-full mx-auto relative'>
+                    {/* <img alt='badakar' src={imageSource} className='mx-auto lg:w-[90%] lg:h-[95%] bg-cover object-center transition-all duration-200' /> */}
+                    {
+                        <Suspense fallback={<div>Loading...</div>}>
+                            {<MacbookScroll title={
+                                <span>
+                                    We don't build <span className='text-yellow-25'>just products</span>. We create <br /><span className='text-pink-200'>Experiences.</span>
+                                </span>
+                            }
+                                badge={
+                                    <Badge className="h-10 w-10 transform -rotate-12" />
+                                }
+                                showGradient={false} />}
+                        </Suspense>
+                    }
+                    {/* <RiArrowLeftSLine onClick={handleLeftClick} className='   cursor-pointer absolute top-[50%] left-[7%] -translate-y-[50%] text-gray-200 opacity-60 transition-opacity duration-150 hover:opacity-100' size={"2.5rem"} />
                 <RiArrowRightSLine onClick={handleRightClick} className=' cursor-pointer absolute top-[50%] right-[12%] -translate-y-[50%] text-gray-200 opacity-60 transition-opacity duration-150 hover:opacity-100' size={"2.5rem"} />
                 {
                     <div className='lg:flex lg:flex-row lg:gap-2 absolute bottom-[10%] left-[48%] -translate-x-[45%]'>
@@ -52,10 +65,10 @@ const Section7 = () => {
                             <div key={index} onClick={() => { setImageSource(imageSourceLink[index]) }} className={` cursor-pointer w-[2rem] h-[4px] ${getCurrentIndexImageSource(index) ? 'bg-white' : 'bg-gray-400 opacity-70'} transition-all duration-200`}></div>
                         ))}
                     </div>
-                }
-            </div>
+                } */}
+                </div>
 
-            <HeadPoints
+                {/* <HeadPoints
                 subHeading={"OUR SPECIALISATION"}
                 mainHeading={"We provide End-to-End solutions in broad Interior Designing solutions."}
                 customCSSMainHeading={"lg:max-w-[70%]"}
@@ -69,9 +82,14 @@ const Section7 = () => {
                     <p>• Home Automation</p>
                     <p>• Security Surveillance</p>
                 </div>
-            </HeadPoints>
+            </HeadPoints> */}
+            </div>
         </div>
     )
 }
 
 export default Section7
+
+
+
+

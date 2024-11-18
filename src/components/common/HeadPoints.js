@@ -4,6 +4,7 @@ const HeadPoints = ({
     subHeading,
     mainHeading,
     body,
+    boxCustomCSS,
     children,
     customCSSBOX,
     customCSSMainHeading
@@ -11,7 +12,7 @@ const HeadPoints = ({
     return (
         <div className={`lg:flex lg:flex-col ${customCSSBOX}`}>
             <div className='flex items-center gap-5'>
-                <div className='w-[15px] h-[2px] bg-black'></div>
+                <div className={`w-[15px] h-[2px] ${boxCustomCSS}`}></div>
                 <p className=' opacity-60 tracking-widest'>{subHeading}</p>
             </div>
 

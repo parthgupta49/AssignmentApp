@@ -1,6 +1,6 @@
 import React from 'react'
 import { VscDash } from "react-icons/vsc";
-
+// import { FloatingDock } from "@/components/ui/floating-dock";
 const imageSourceLink = [
     "https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381",
     "https://www.badakar.com/assets/img/grc-subhiksha-logo.png?h=58ca893a7320133e5fedd1f9b824ccd3",
@@ -16,6 +16,86 @@ const imageSourceLink = [
     "https://www.badakar.com/assets/img/ola.jpg?h=28c6e1b59a1053f9db4c0451d26a2186",
     "https://www.badakar.com/assets/img/kr-hospital.jpg?h=b3cb65e60eebc74d6553d068ab879620"
 ]
+
+
+
+// export function FloatingDockDemo() {
+//     const links = [
+//         {
+//             title: "Home",
+//             icon: (
+//                 <div className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
+//                     <img src={"https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381"} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
+//                 </div>
+//             ),
+//             href: "#",
+//         },
+
+//         {
+//             title: "Products",
+//             icon: (
+//                 <div className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
+//                     <img src={"https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381"} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
+//                 </div>
+//             ),
+//             href: "#",
+//         },
+//         {
+//             title: "Components",
+//             icon: (
+//                 <div className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
+//                     <img src={"https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381"} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
+//                 </div>
+//             ),
+//             href: "#",
+//         },
+//         {
+//             title: "Aceternity UI",
+//             icon: (
+//                 <div className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
+//                     <img src={"https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381"} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
+//                 </div>
+//             ),
+//             href: "#",
+//         },
+//         {
+//             title: "Changelog",
+//             icon: (
+//                 <div className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
+//                     <img src={"https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381"} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
+//                 </div>
+//             ),
+//             href: "#",
+//         },
+
+//         {
+//             title: "Twitter",
+//             icon: (
+//                 <div className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
+//                     <img src={"https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381"} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
+//                 </div>
+//             ),
+//             href: "#",
+//         },
+//         {
+//             title: "GitHub",
+//             icon: (
+//                 <div className=' box-border lg:mx-2 lg:my-2 lg:w-[90%] lg:px-4 lg:py-6 lg:rounded-sm  lg:hover:scale-[106%] lg:transition-all lg:duration-700 lg:ease-in-out lg:flex lg:items-center lg:justify-center  lg:shadow-gray-500 lg:shadow-xl '>
+//                     <img src={"https://www.badakar.com/assets/img/array-about.jpg?h=d6fbb78c9e9fb49ff8d011b8cc79e381"} alt="badakar-gallary" className='lg:w-fit lg:h-[45px] lg:rounded-lg  ' />
+//                 </div>
+//             ),
+//             href: "#",
+//         },
+//     ];
+//     return (
+//         (<div className="flex items-center justify-center h-[35rem] w-full">
+//             <FloatingDock
+//                 // only for demo, remove for production
+//                 mobileClassName="translate-y-20"
+//                 items={links} />
+//         </div>)
+//     );
+// }
 
 
 const Section8 = () => {
@@ -40,7 +120,7 @@ const Section8 = () => {
                 </div>
 
                 <div className='text-btn-color bg-btn-bg  text-sm hover:text-btn-hover-color hover:bg-btn-hover-bg px-3 py-2 flex items-center tracking-widest rounded-lg transition-colors duration-300'>
-                <VscDash /> &nbsp; OUR CLIENTAL</div>
+                    <VscDash /> &nbsp; OUR CLIENTAL</div>
 
 
             </div>
